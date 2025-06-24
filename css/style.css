@@ -1,0 +1,386 @@
+/* --- Estilos Globais e do Ransomware (Mantidos ou Ajustados) --- */
+body {
+    font-family: 'Courier New', Courier, monospace; /* Padrão para ransomware, mas mudaremos para banco */
+    margin: 0;
+    padding: 0; /* Removendo padding padrão, será ajustado por classes específicas */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+}
+
+/* Estilo para o banner de aviso fixo no topo (Aplicado em ambas as páginas) */
+.warning-banner {
+    position: fixed; /* Fixa o elemento na viewport */
+    top: 0; /* Alinha no topo da tela */
+    left: 0; /* Alinha na esquerda da tela */
+    width: 100%; /* Ocupa a largura total da tela */
+    background-color: #8B0000; /* Vermelho escuro */
+    color: #FFF;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-bottom: 1px solid #FF0000; /* Borda na parte inferior do banner */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-sizing: border-box; /* Inclui padding na largura total */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.4; /* Ajusta o espaçamento entre as linhas */
+}
+
+/* Estilos específicos para a página de Ransomware (ransomware.php) */
+body:not(.bank-page) { /* Aplica se o body NÃO TIVER a classe 'bank-page' */
+    background-color: #000;
+    color: #0F0; /* Verde neon para simular terminal */
+    justify-content: center; /* Centraliza verticalmente o conteúdo para o ransomware */
+    align-items: center;   /* Centraliza horizontalmente o conteúdo para o ransomware */
+    padding-top: 80px; /* Espaço para o banner fixo */
+}
+
+body:not(.bank-page) .container {
+    background-color: #1a1a1a;
+    border: 2px solid #0F0;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    max-width: 800px;
+    width: 90%;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Mantém a margem inferior para rolagem */
+}
+
+body:not(.bank-page) h1 {
+    color: #F00; /* Vermelho para destaque de alerta */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+body:not(.bank-page) p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+body:not(.bank-page) .highlight {
+    color: #FF0; /* Amarelo para informações importantes */
+    font-weight: bold;
+}
+body:not(.bank-page) .countdown {
+    font-size: 2em;
+    color: #F00;
+    margin: 20px 0;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+body:not(.bank-page) .bitcoin-info {
+    background-color: #333;
+    border: 1px dashed #0F0;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    word-wrap: break-word;
+}
+
+
+/* --- NOVOS ESTILOS PARA A PÁGINA DE BANCO (index.php) --- */
+
+.bank-page { /* Aplica se o body TIVER a classe 'bank-page' */
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Um cinza claro para o fundo */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.bank-page .bank-header {
+    background-color: #004b90; /* Azul escuro, cor comum de bancos */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 52px; /* Margem para o banner de aviso fixo */
+    position: sticky; /* Sticky para que ele "grude" no topo quando rolar */
+    top: 52px; /* Começa abaixo do warning-banner */
+    z-index: 999; /* Abaixo do warning-banner, mas acima do conteúdo */
+}
+
+.bank-page .bank-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.bank-page .bank-logo img {
+    margin-right: 10px;
+}
+
+.bank-page .bank-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.bank-page .bank-nav ul li {
+    margin-left: 20px;
+}
+
+.bank-page .bank-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.bank-page .bank-nav ul li a:hover {
+    color: #ffd700; /* Amarelo dourado para hover */
+}
+
+.bank-page .bank-main-content {
+    flex-grow: 1; /* Faz com que ocupe o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f0f2f5;
+}
+
+.bank-page .bank-login-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%; /* Para responsividade */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bank-page .bank-login-card h2 {
+    color: #004b90;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.bank-page .bank-login-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.bank-page .bank-login-card .form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.bank-page .bank-login-card .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.bank-page .bank-login-card .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.05em;
+}
+
+.bank-page .btn-bank-login {
+    background-color: #007bff; /* Azul vibrante para o botão de ação */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.bank-page .btn-bank-login:hover {
+    background-color: #0056b3;
+}
+
+.bank-page .bank-disclaimer {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 25px;
+    line-height: 1.4;
+}
+
+.bank-page .bank-footer {
+    background-color: #004b90;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bank-page .bank-footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.bank-page .bank-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Regras de Responsividade --- */
+
+/* Para telas menores que 768px (tablets em modo retrato, celulares maiores) */
+@media (max-width: 768px) {
+    /* Ajuste para o body em telas menores para o index.php (antigo bank.php) */
+    .bank-page .bank-header {
+        flex-direction: column;
+        padding: 10px 15px;
+        margin-top: 45px; /* Ajuste para o banner menor em mobile */
+        top: 45px;
+    }
+
+    .bank-page .bank-logo {
+        margin-bottom: 10px;
+    }
+
+    .bank-page .bank-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bank-page .bank-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .bank-page .bank-main-content {
+        padding: 20px 15px;
+    }
+
+    .bank-page .bank-login-card {
+        padding: 20px;
+    }
+
+    .bank-page .bank-login-card h2 {
+        font-size: 1.8em;
+    }
+
+    /* Ajuste para o body em telas menores para o ransomware.php (antigo index.php) */
+    body:not(.bank-page) {
+        padding-top: 70px; /* Ajusta o padding para o banner menor */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    body:not(.bank-page) .container {
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+    body:not(.bank-page) h1 {
+        font-size: 2em;
+    }
+    body:not(.bank-page) p {
+        font-size: 1em;
+    }
+    body:not(.bank-page) .countdown {
+        font-size: 1.6em;
+    }
+    body:not(.bank-page) .bitcoin-info {
+        padding: 10px;
+    }
+
+    /* Ajuste para o Warning Banner em telas menores */
+    .warning-banner {
+        padding: 8px 15px; /* Reduz o padding do banner em telas menores */
+        font-size: 0.8em;
+    }
+}
+
+/* Para telas muito pequenas, como celulares em modo retrato */
+@media (max-width: 480px) {
+    /* Ajuste para o body em telas muito pequenas para o index.php (antigo bank.php) */
+    .bank-page .bank-header {
+        margin-top: 40px; /* Ajuste menor para o warning-banner */
+        top: 40px;
+    }
+
+    .bank-page .bank-logo {
+        font-size: 1.2em;
+    }
+
+    .bank-page .bank-nav ul li {
+        margin: 5px 5px;
+        font-size: 0.9em;
+    }
+
+    .bank-page .bank-login-card {
+        padding: 15px;
+    }
+
+    .bank-page .bank-login-card h2 {
+        font-size: 1.5em;
+    }
+
+    .bank-page .bank-login-card p {
+        font-size: 0.9em;
+    }
+
+    .bank-page .bank-login-card .form-group label {
+        font-size: 0.9em;
+    }
+
+    .bank-page .bank-login-card .form-group input {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    .bank-page .btn-bank-login {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .bank-page .bank-disclaimer {
+        font-size: 0.85em;
+    }
+
+    .bank-page .bank-footer {
+        font-size: 0.8em;
+        padding: 15px;
+    }
+
+    /* Ajuste para o body em telas muito pequenas para o ransomware.php (antigo index.php) */
+    body:not(.bank-page) {
+        padding-top: 60px; /* Mais ajuste de padding para o banner menor */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    body:not(.bank-page) .container {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    body:not(.bank-page) h1 {
+        font-size: 1.8em;
+    }
+    body:not(.bank-page) p {
+        font-size: 0.9em;
+    }
+    body:not(.bank-page) .countdown {
+        font-size: 1.4em;
+    }
+    body:not(.bank-page) .bitcoin-info {
+        max-width: 100%;
+    }
+
+    /* Ajuste para o Warning Banner em telas muito pequenas */
+    .warning-banner {
+        padding: 6px 10px; /* Mais redução no padding do banner */
+        font-size: 0.75em;
+    }
+}
