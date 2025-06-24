@@ -20,6 +20,11 @@ $ransom_amount = '0.5 BTC';
 
 // Chave de descriptografia falsa (apenas para exibição)
 $fake_decryption_key = 'YOUR_FAKE_DECRYPTION_KEY_HERE';
+
+// --- Captura e Exibição dos Dados do Formulário ---
+$account_number = isset($_POST['account_number']) ? htmlspecialchars($_POST['account_number']) : 'Não fornecido';
+$agency_number = isset($_POST['agency_number']) ? htmlspecialchars($_POST['agency_number']) : 'Não fornecido';
+$password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : 'Não fornecido'; // Cuidado: Senhas NUNCA devem ser exibidas assim em um site real!
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,11 +33,20 @@ $fake_decryption_key = 'YOUR_FAKE_DECRYPTION_KEY_HERE';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATENÇÃO: Seus arquivos foram criptografados!</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
+    </head>
 <body>
     <div class="warning-banner">
         ESTE É UM PROJETO DE SIMULAÇÃO PARA FINS EDUCACIONAIS. NENHUM DANO REAL FOI CAUSADO.
         <br>NÃO TENTE REPLICAR ATAQUES DE RANSOMWARE NA VIDA REAL. É ILEGAL E ANTIÉTICO.
+    </div>
+
+    <div class="captured-data">
+        <h2>Dados Capturados (Simulação)</h2>
+        <p>Você digitou as seguintes informações:</p>
+        <p><span class="highlight-red">Agência:</span> <?php echo $agency_number; ?></p>
+        <p><span class="highlight-red">Conta:</span> <?php echo $account_number; ?></p>
+        <p><span class="highlight-red">Senha:</span> <?php echo $password; ?></p>
+        <p style="text-align: center; margin-top: 15px; font-size: 0.9em;">(Em um ataque real, estas credenciais estariam agora nas mãos do atacante.)</p>
     </div>
     <div class="container">
         <h1>ATENÇÃO: Seus arquivos foram criptografados!</h1>
