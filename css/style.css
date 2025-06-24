@@ -1,69 +1,66 @@
-/* --- Estilos Globais e do Ransomware --- */
 body {
-    font-family: 'Courier New', Courier, monospace; /* Padrão para ransomware, mas mudaremos para banco */
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    padding: 0; /* Removendo padding padrão, será ajustado por classes específicas */
+    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+    box-sizing: border-box;
 }
 
-/* Estilo para o banner de aviso fixo no topo (Aplicado em ambas as páginas) */
 .warning-banner {
-    position: fixed; /* Fixa o elemento na viewport */
-    top: 0; /* Alinha no topo da tela */
-    left: 0; /* Alinha na esquerda da tela */
-    width: 100%; /* Ocupa a largura total da tela */
-    background-color: #8B0000; /* Vermelho escuro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8B0000;
     color: #FFF;
     padding: 10px 20px;
     font-size: 0.9em;
     font-weight: bold;
-    border-bottom: 1px solid #FF0000; /* Borda na parte inferior do banner */
+    border-bottom: 1px solid #FF0000;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    box-sizing: border-box; /* Inclui padding na largura total */
-    text-align: center; /* Centraliza o texto */
-    line-height: 1.4; /* Ajusta o espaçamento entre as linhas */
+    z-index: 1000;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1.4;
 }
 
-/* Estilos específicos para a página de Ransomware (ransomware.php) */
-body:not(.bank-page) { /* Aplica se o body NÃO TIVER a classe 'bank-page' */
+body:not(.bank-page) {
     background-color: #000;
-    color: #0F0; /* Verde neon para simular terminal */
-    padding-top: 100px; /* Aumenta o padding superior para dar espaço ao banner e conteúdo */
-    padding-bottom: 20px; /* Adiciona padding na parte inferior do body */
-    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    color: #0F0;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    align-items: center;
 }
 
-/* Estilos para a seção de dados capturados (AGORA NO style.css) */
+
 .captured-data {
-    background-color: #ff000033; /* Vermelho semi-transparente */
+    background-color: #ff000033;
     border: 1px dashed #FF0000;
-    padding: 20px; /* Aumenta o padding interno para mais espaço */
-    margin-top: 30px; /* Mais espaço do banner de aviso */
-    margin-bottom: 30px; /* Mais espaço do container principal */
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     border-radius: 5px;
     text-align: left;
     font-size: 1.1em;
-    color: #FF0; /* Amarelo para destaque */
+    color: #FF0;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-    max-width: 800px; /* Alinhar com o container principal */
+    max-width: 800px;
     width: 90%;
     box-sizing: border-box;
-    align-self: center; /* Garante centralização caso o pai não seja flex */
-    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    align-self: center;
+    line-height: 1.6;
 }
 .captured-data h2 {
     color: #F00;
     margin-top: 0;
     text-align: center;
-    font-size: 1.5em; /* Ajusta o tamanho do título */
-    margin-bottom: 15px; /* Espaço abaixo do título */
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 .captured-data p {
-    margin-bottom: 8px; /* Ajusta espaçamento entre parágrafos */
+    margin-bottom: 8px;
 }
 .captured-data .highlight-red {
     color: #F00;
@@ -80,12 +77,11 @@ body:not(.bank-page) .container {
     max-width: 800px;
     width: 90%;
     box-sizing: border-box;
-    /* margin-top: 0; */ /* Removido, o margin-bottom do captured-data já cria o espaço */
-    margin-bottom: 30px; /* Mantém a margem inferior para rolagem */
+    margin-bottom: 30px;
 }
 
 body:not(.bank-page) h1 {
-    color: #F00; /* Vermelho para destaque de alerta */
+    color: #F00;
     font-size: 2.5em;
     margin-bottom: 20px;
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
@@ -96,7 +92,7 @@ body:not(.bank-page) p {
     margin-bottom: 15px;
 }
 body:not(.bank-page) .highlight {
-    color: #FF0; /* Amarelo para informações importantes */
+    color: #FF0;
     font-weight: bold;
 }
 body:not(.bank-page) .countdown {
@@ -114,28 +110,26 @@ body:not(.bank-page) .bitcoin-info {
     word-wrap: break-word;
 }
 
-
-/* --- ESTILOS PARA A PÁGINA DE BANCO (index.php) --- */
-.bank-page { /* Aplica se o body TIVER a classe 'bank-page' */
+.bank-page {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5; /* Um cinza claro para o fundo */
+    background-color: #f0f2f5;
     color: #333;
     display: flex;
     flex-direction: column;
 }
 
 .bank-page .bank-header {
-    background-color: #004b90; /* Azul escuro, cor comum de bancos */
+    background-color: #004b90;
     color: #fff;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-top: 52px; /* Margem para o banner de aviso fixo */
-    position: sticky; /* Sticky para que ele "grude" no topo quando rolar */
-    top: 52px; /* Começa abaixo do warning-banner */
-    z-index: 999; /* Abaixo do warning-banner, mas acima do conteúdo */
+    margin-top: 52px;
+    position: sticky;
+    top: 52px;
+    z-index: 999;
 }
 
 .bank-page .bank-logo {
@@ -168,11 +162,11 @@ body:not(.bank-page) .bitcoin-info {
 }
 
 .bank-page .bank-nav ul li a:hover {
-    color: #ffd700; /* Amarelo dourado para hover */
+    color: #ffd700;
 }
 
 .bank-page .bank-main-content {
-    flex-grow: 1; /* Faz com que ocupe o espaço restante */
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,7 +181,7 @@ body:not(.bank-page) .bitcoin-info {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 450px;
-    width: 100%; /* Para responsividade */
+    width: 100%;
     text-align: center;
     box-sizing: border-box;
 }
@@ -227,7 +221,7 @@ body:not(.bank-page) .bitcoin-info {
 }
 
 .bank-page .btn-bank-login {
-    background-color: #007bff; /* Azul vibrante para o botão de ação */
+    background-color: #007bff;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -257,7 +251,7 @@ body:not(.bank-page) .bitcoin-info {
     padding: 20px;
     text-align: center;
     font-size: 0.9em;
-    margin-top: auto; /* Empurra o rodapé para o final da página */
+    margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -270,15 +264,11 @@ body:not(.bank-page) .bitcoin-info {
     text-decoration: underline;
 }
 
-/* --- Regras de Responsividade --- */
-
-/* Para telas menores que 768px (tablets em modo retrato, celulares maiores) */
 @media (max-width: 768px) {
-    /* Ajuste para o body em telas menores para o index.php (antigo bank.php) */
     .bank-page .bank-header {
         flex-direction: column;
         padding: 10px 15px;
-        margin-top: 45px; /* Ajuste para o banner menor em mobile */
+        margin-top: 45px;
         top: 45px;
     }
 
@@ -307,14 +297,13 @@ body:not(.bank-page) .bitcoin-info {
         font-size: 1.8em;
     }
 
-    /* Ajuste para o body em telas menores para o ransomware.php (antigo index.php) */
     body:not(.bank-page) {
-        padding-top: 90px; /* Ajusta o padding para o banner e o novo bloco */
+        padding-top: 90px;
         padding-left: 15px;
         padding-right: 15px;
     }
     .captured-data {
-        padding: 15px; /* Reduz padding interno do captured-data */
+        padding: 15px;
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: 1em;
@@ -343,18 +332,15 @@ body:not(.bank-page) .bitcoin-info {
         padding: 10px;
     }
 
-    /* Ajuste para o Warning Banner em telas menores */
     .warning-banner {
-        padding: 8px 15px; /* Reduz o padding do banner em telas menores */
+        padding: 8px 15px;
         font-size: 0.8em;
     }
 }
 
-/* Para telas muito pequenas, como celulares em modo retrato */
 @media (max-width: 480px) {
-    /* Ajuste para o body em telas muito pequenas para o index.php (antigo bank.php) */
     .bank-page .bank-header {
-        margin-top: 40px; /* Ajuste menor para o warning-banner */
+        margin-top: 40px;
         top: 40px;
     }
 
@@ -402,14 +388,13 @@ body:not(.bank-page) .bitcoin-info {
         padding: 15px;
     }
 
-    /* Ajuste para o body em telas muito pequenas para o ransomware.php (antigo index.php) */
     body:not(.bank-page) {
-        padding-top: 70px; /* Mais ajuste de padding para o banner e o novo bloco */
+        padding-top: 70px;
         padding-left: 10px;
         padding-right: 10px;
     }
     .captured-data {
-        padding: 10px; /* Mais redução de padding interno */
+        padding: 10px;
         margin-top: 15px;
         margin-bottom: 15px;
         font-size: 0.9em;
@@ -435,9 +420,8 @@ body:not(.bank-page) .bitcoin-info {
         max-width: 100%;
     }
 
-    /* Ajuste para o Warning Banner em telas muito pequenas */
     .warning-banner {
-        padding: 6px 10px; /* Mais redução no padding do banner */
+        padding: 6px 10px;
         font-size: 0.75em;
     }
 }
