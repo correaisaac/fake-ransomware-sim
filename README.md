@@ -1,4 +1,4 @@
-# ⚠️ Fake Ransomware Sim (PROJETO MERAMENTE ILUSTRATIVO!!!!!!!!!    ) ⚠️
+# ⚠️ Fake Ransomware Sim (PROJETO MERAMENTE ILUSTRATIVO!!!!!!) ⚠️
 
 Este é um projeto de simulação de phishing e ransomware criado para **fins estritamente educacionais e de demonstração**. Ele foi desenvolvido para ilustrar, de forma segura e controlada, como um ataque de engenharia social (phishing) e um ataque de ransomware poderiam se manifestar, sem causar qualquer dano real ou coletar informações sensíveis.
 
