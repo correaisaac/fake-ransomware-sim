@@ -1,9 +1,7 @@
 <?php
-// Desabilita a exibição de erros para um ambiente de produção (boa prática de segurança)
+// Desabilita a exibição de erros para um ambiente de produção
 ini_set('display_errors', 0);
 error_reporting(0);
-
-// --- PHP para Geração de Dados Falsos ---
 
 // Gerar um ID de vítima falso
 $victim_id = strtoupper(uniqid('VICTIM-', true));
@@ -21,10 +19,10 @@ $ransom_amount = '0.5 BTC';
 // Chave de descriptografia falsa (apenas para exibição)
 $fake_decryption_key = 'YOUR_FAKE_DECRYPTION_KEY_HERE';
 
-// --- Captura e Exibição dos Dados do Formulário ---
+// Captura e Exibição dos Dados do Formulário
 $account_number = isset($_POST['account_number']) ? htmlspecialchars($_POST['account_number']) : 'Não fornecido';
 $agency_number = isset($_POST['agency_number']) ? htmlspecialchars($_POST['agency_number']) : 'Não fornecido';
-$password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : 'Não fornecido'; // Cuidado: Senhas NUNCA devem ser exibidas assim em um site real!
+$password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : 'Não fornecido';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -33,7 +31,7 @@ $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATENÇÃO: Seus arquivos foram criptografados!</title>
     <link rel="stylesheet" href="css/style.css">
-    </head>
+</head>
 <body>
     <div class="warning-banner">
         ESTE É UM PROJETO DE SIMULAÇÃO PARA FINS EDUCACIONAIS. NENHUM DANO REAL FOI CAUSADO.
@@ -61,11 +59,10 @@ $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '
         <p>Você tem <span class="countdown" id="countdown"></span> para efetuar o pagamento. Se o prazo expirar, a chave de descriptografia será permanentemente excluída e seus arquivos serão perdidos para sempre.</p>
         <p>Após o pagamento, envie seu ID de Vítima e o comprovante de transação para o nosso contato (informações fictícias para simulação).</p>
         <p>Não tente descriptografar seus arquivos por conta própria. Isso pode danificá-los permanentemente e tornar a recuperação impossível.</p>
-    </div>
 
+        </div>
 
     <script>
-        // Uma forma de passar dados PHP para o JS de forma segura e fácil
         const deadlineDateStr = "<?php echo $deadline_date;?>";
     </script>
     <script src="js/script.js"></script>

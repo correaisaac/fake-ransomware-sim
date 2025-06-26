@@ -1,3 +1,4 @@
+// JavaScript para o Cronômetro
 var countDownDate = new Date(deadlineDateStr).getTime();
 
 var x = setInterval(function() {
