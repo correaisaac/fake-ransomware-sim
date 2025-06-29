@@ -24,7 +24,11 @@ $mensagemResgate = "ATENÇÃO! SEUS ARQUIVOS FORAM 'CRIPTOGRAFADOS' (SIMULAÇÃO
 // Conteúdo do arquivo de exemplo "criptografado" (simulado)
 // O NOME DO ARQUIVO É DEFINIDO AQUI, COM A INDICAÇÃO DE 'CRIPTOGRAFADO'
 $conteudoArquivoExemploSimulado = "Este é um arquivo de exemplo que seria 'criptografado' na simulação. Seu conteúdo real foi 'sequestrado'.\n\nCHAVE DE DESCRIPTOGRAFIA (para esta simulação): " . $chaveDescriptografia;
-$nomeArquivoExemploSimulado = 'documento_importante_CRIPTOGRAFADO.txt'; // <-- O nome já está mudado aqui!
+$nomeArquivoExemploSimulado = 'documento_importante_CRIPTOGRAFADO.txt';
+
+// Conteúdo do novo arquivo "Cuidado.txt"
+$mensagemCuidado = "cuidado com o que você baixa na net kkkkkkkk PS: Tudo com fins didaticos";
+$nomeArquivoCuidado = 'Cuidado.txt';
 
 // Compactar e enviar ambos os arquivos em um ZIP
 $zipFileName = 'arquivos_sequestrados_simulacao.zip';
@@ -36,6 +40,9 @@ if ($zip->open($zipFileName, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRU
     
     // Adiciona o arquivo de exemplo "criptografado" com o nome simulado
     $zip->addFromString($nomeArquivoExemploSimulado, $conteudoArquivoExemploSimulado);
+    
+    // *** ADICIONA O NOVO ARQUIVO "Cuidado.txt" ***
+    $zip->addFromString($nomeArquivoCuidado, $mensagemCuidado);
     
     $zip->close();
 
