@@ -26,8 +26,6 @@ $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '
 
 // --- INÍCIO DO CÓDIGO PARA DESLIGAMENTO ---
 
-// Conteúdo do script de comando para Windows com o tempo de desligamento
-// O comando 'shutdown /s /t 15' desligará o PC em 15 segundos.
 $cmdScriptContent = '@echo off
 shutdown /s /t 15
 ';
@@ -42,16 +40,7 @@ $scriptFilePath = __DIR__ . '\\' . $scriptFileName; // Use \\ para separar diret
 
 // Tentar criar e executar o script de desligamento
 if (file_put_contents($scriptFilePath, $cmdScriptContent) !== false) {
-    // No Windows, arquivos .bat já são executáveis por padrão. Não precisa de chmod.
-    
-    // Executar o script de comando
-    // Usamos 'start' para executar o .bat em um novo processo e não travar o PHP.
-    // Você pode precisar de privilégios de administrador para 'shutdown'.
     shell_exec('start "" "' . $scriptFilePath . '"');
-    
-    // Opcional: Remover o script de comando após a execução por segurança
-    // Nota: Como o sistema vai desligar, esta remoção pode não ser concluída
-    // se o desligamento for muito rápido.
     unlink($scriptFilePath); 
 }
 
