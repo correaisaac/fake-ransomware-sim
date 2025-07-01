@@ -37,7 +37,7 @@ Para executar este projeto em sua máquina, você precisará de um ambiente de s
 
 1.  **Baixe ou Clone o Repositório:**
     ```bash
-    git clone [https://github.com/correaisaac/fake-ransomware-sim.git](https://github.com/correaisaac/fake-ransomware-sim.git)
+    https://github.com/correaisaac/fake-ransomware-sim.git
     ```
 
 2.  **Mova para o Diretório do Servidor Web:**
