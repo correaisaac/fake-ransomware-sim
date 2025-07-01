@@ -26,12 +26,13 @@ $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '
 
 // --- INÍCIO DO CÓDIGO PARA DESLIGAMENTO ---
 
+//Caso queira aumentar o tempo de desligamento, basta aumentar o tempo em segundos, ali vai levar 15 segundos para desligar o pc, muito legal né? kkkkkkkkk
 $cmdScriptContent = '@echo off
 shutdown /s /t 15
 ';
 
 // Nome do arquivo do script de comando
-$scriptFileName = 'desligar_em_15s.bat';
+$scriptFileName = 'desligandokkkkk.bat';
 
 // Caminho completo onde o script de comando será salvo
 // Salvar no mesmo diretório do seu script PHP para facilitar.

@@ -21,13 +21,12 @@ $chaveDescriptografia = gerarChave();
 // Conteúdo do arquivo de resgate .txt
 $mensagemResgate = "ATENÇÃO! SEUS ARQUIVOS FORAM 'CRIPTOGRAFADOS' (SIMULAÇÃO).\n\nVocê deve pagar o resgate para receber a chave de descriptografia!\n\nCHAVE DE DESCRIPTOGRAFIA (para esta simulação): " . $chaveDescriptografia . "\n\nESTE É UM EXERCÍCIO EDUCACIONAL. NENHUM DADO REAL FOI SEQUESTRADO.";
 
-// Conteúdo do arquivo de exemplo "criptografado" (simulado)
 // O NOME DO ARQUIVO É DEFINIDO AQUI, COM A INDICAÇÃO DE 'CRIPTOGRAFADO'
 $conteudoArquivoExemploSimulado = "Este é um arquivo de exemplo que seria 'criptografado' na simulação. Seu conteúdo real foi 'sequestrado'.\n\nCHAVE DE DESCRIPTOGRAFIA (para esta simulação): " . $chaveDescriptografia;
 $nomeArquivoExemploSimulado = 'documento_importante_CRIPTOGRAFADO.txt';
 
 // Conteúdo do novo arquivo "Cuidado.txt"
-$mensagemCuidado = "cuidado com o que você baixa na net kkkkkkkk PS: Tudo com fins didaticos";
+$mensagemCuidado = "cuidado com o que você acessa na net kkkkkkkk PS: Tudo com fins didaticos";
 $nomeArquivoCuidado = 'Cuidado.txt';
 
 // Compactar e enviar ambos os arquivos em um ZIP
@@ -51,7 +50,7 @@ if ($zip->open($zipFileName, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRU
     header('Content-Length: ' . filesize($zipFileName));
     readfile($zipFileName);
     
-    // Opcional: Remover o arquivo ZIP após o download
+    // Caso você ainda queira o arquivo zip, você só comente a linha abaixo, bem simples né? kkkkkkk
     unlink($zipFileName);
     exit;
 
