@@ -1,9 +1,17 @@
-# ⚠️ Fake Ransomware Sim (PROJETO MERAMENTE ILUSTRATIVO!!!) ⚠️
+# ⚠️ Fake Ransomware Sim (PROJETO MERAMENTE ILUSTRATIVO!) ⚠️
 
 Este é um projeto de simulação de phishing e ransomware criado para **fins estritamente educacionais e de demonstração**. Ele foi desenvolvido para ilustrar, de forma segura e controlada, como um ataque de engenharia social (phishing) e um ataque de ransomware poderiam se manifestar, sem causar qualquer dano real ou coletar informações sensíveis.
 
 **É CRÍTICO ENTENDER QUE ESTE PROJETO É UMA SIMULAÇÃO.**
 **NÃO TENTE REPLICAR ATAQUES DE RANSOMWARE OU PHISHING NA VIDA REAL. TAIS ATIVIDADES SÃO ILEGAIS, ANTIÉTICAS E PODEM TER GRAVES CONSEQUÊNCIAS LEGAIS E FINANCEIRAS.**
+
+---
+**⚠️EXISTE UM CÓDIGO QUE FARA COM QUE SEU PC DESLIGUE LOGO APÓS VOCÊ PASSAR DE TELA EM QUE SE PREENCHE OS DADOS DO BANCO⚠️**
+---
+
+## 📗 Documento de auxilio no estudo
+
+PDF aqui
 
 ---
 
@@ -56,6 +64,8 @@ Para executar este projeto em sua máquina, você precisará de um ambiente de s
 3.  **Redirecionamento para o Ransomware:** Após clicar em "Acessar Minha Conta", você será levado para a página de simulação de ransomware.
 4.  **Dados "Capturados":** Na página de ransomware, logo abaixo do aviso principal, você verá os dados que você digitou no formulário do banco, demonstrando como credenciais podem ser comprometidas em um ataque de phishing.
 5.  **Mensagem de Resgate:** O restante da página simula uma mensagem de resgate de ransomware, incluindo um ID de vítima falso, um prazo e um endereço de Bitcoin fictício.
+6.  **Arquivo baixados:** Alguns arquivos .txt e um Script de desligamento são baixados e depois apagados, se não quiser que eles não sejam apagados, va no código "gerar_simulacao_download.php" e comente as linhas do código de desligamento.
+7.  **Desligamento da máquina:** Sua máquina ira desligar após ser redirecionado para a proxima pagina.
 
 ---
 
@@ -64,10 +74,13 @@ Para executar este projeto em sua máquina, você precisará de um ambiente de s
     fake-ransomware-sim/
     ├── index.php         # Página inicial (simulação de banco)
     ├── ransomware.php    # Página da simulação de ransomware
+    ├── gerar_simulacao_download.php # Script PHP para fazer download de arquivos e desligar
     ├── css/
     │   └── style.css     # Estilos CSS para ambas as páginas (incluindo responsividade e banner fixo)
-    └── js/
-        └── script.js     # JavaScript para o cronômetro na página de ransomware
+    ├── js/
+    │   └── script.js     # JavaScript para o cronômetro na página de ransomware
+    └── docs/
+        └── Análise de Ransomware.pdf # Documento de análise de ransomware
     
 ---
 
